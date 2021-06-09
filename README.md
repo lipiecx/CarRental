@@ -4,6 +4,7 @@ Głównym założeniem naszej aplikacji „Wypożyczalnia samochodowa” będzie
 
 
 2.Funkcjonalność
+
 Naszym projektem będzie stworzenie wypożyczalni samochodowej z następującą funkcjonalnością:
 
 - Tworzenie konta klienta
