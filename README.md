@@ -10,6 +10,8 @@ Naszym projektem będzie stworzenie wypożyczalni samochodowej z następującą 
 - Przegląd dostępnych samochodów
 - Wybór daty wypożyczonego samochodu
 - Wypożyczenie samochodu za podaną cenę
+- Wybór modelu samochodu
+- Wpłacanie środków na konto
 
 3.Technologia
 
