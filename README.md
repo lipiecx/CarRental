@@ -1,5 +1,6 @@
 # CarRental
 1.Specyfikacja
+
 Głównym założeniem naszej aplikacji „Wypożyczalnia samochodowa” będzie możliwość wypożyczania samochodów na określony czas za odpowiednią cenę pobieraną z portfela klienta. Każdy będzie mógł założyć konto oraz wpłacić na nie odpowiednią sumę, z której następnie będzie pobierana opłata za wypożyczenie.
 
 
