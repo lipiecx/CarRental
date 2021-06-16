@@ -45,6 +45,9 @@ namespace CarRental.Repositories
             client.Adress = dto.Adress;
             client.Telephone = dto.Telephone;
 
+            _dbContext.Clients.Attach(client);
+            _dbContext.SaveChanges();
+
             return client;
         }
 

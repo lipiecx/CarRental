@@ -27,7 +27,28 @@ namespace CarRental.Controllers
             var clients = _clientRepository.GetAll();
             return Ok(clients);
         }
+       
+        [HttpPost("Add")]
+        public IActionResult Add([FromBody] Client client)
+        {
+            var clientEntity = new Client
+            {
+                Surename = client.Surename,
+                Name = client.Name,
+                Pesel = client.Pesel,
+                Adress = client.Adress,
+                Telephone = client.Telephone,
+                Wallet = client.Wallet,
 
+            };
+
+            var result = _clientRepository.Add(clientEntity);
+            if (result)
+            {
+                return Ok(client);
+            }
+            return NotFound();
+        }
 
         [HttpPut("{id}")]
         public Client Put(int id, ClientDto dto)

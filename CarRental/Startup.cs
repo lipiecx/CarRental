@@ -32,6 +32,9 @@ namespace CarRental
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
 
             services.AddTransient<IClientsRepository, ClientsRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IModelRepository, ModelRepository>();
+            services.AddTransient<ICarRepository, CarRepository>();
 
             services.AddControllers();
 
