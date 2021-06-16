@@ -1,4 +1,5 @@
 using CarRental.Models.CarRentalDb;
+using CarRental.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,9 +31,11 @@ namespace CarRental
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
 
+            services.AddTransient<IClientsRepository, ClientsRepository>();
+
             services.AddControllers();
 
-
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
