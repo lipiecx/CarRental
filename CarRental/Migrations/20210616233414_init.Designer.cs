@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarRental.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210610103827_initialmigration")]
-    partial class initialmigration
+    [Migration("20210616233414_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,7 @@ namespace CarRental.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Car");
+                    b.ToTable("Cars");
                 });
 
             modelBuilder.Entity("CarRental.Models.CarRentalDb.Client", b =>
@@ -92,7 +92,7 @@ namespace CarRental.Migrations
 
                     b.HasIndex("carId");
 
-                    b.ToTable("Model");
+                    b.ToTable("Models");
                 });
 
             modelBuilder.Entity("CarRental.Models.CarRentalDb.Order", b =>

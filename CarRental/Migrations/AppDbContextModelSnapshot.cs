@@ -34,7 +34,7 @@ namespace CarRental.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Car");
+                    b.ToTable("Cars");
                 });
 
             modelBuilder.Entity("CarRental.Models.CarRentalDb.Client", b =>
@@ -90,7 +90,7 @@ namespace CarRental.Migrations
 
                     b.HasIndex("carId");
 
-                    b.ToTable("Model");
+                    b.ToTable("Models");
                 });
 
             modelBuilder.Entity("CarRental.Models.CarRentalDb.Order", b =>
