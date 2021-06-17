@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarRental.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210616233414_init")]
+    [Migration("20210617092659_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,12 @@ namespace CarRental.Migrations
                     b.Property<string>("Registration")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("modelId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("modelId");
 
                     b.ToTable("Cars");
                 });
@@ -85,12 +90,7 @@ namespace CarRental.Migrations
                     b.Property<int>("Horsepower")
                         .HasColumnType("int");
 
-                    b.Property<int?>("carId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("carId");
 
                     b.ToTable("Models");
                 });
@@ -126,13 +126,13 @@ namespace CarRental.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("CarRental.Models.CarRentalDb.Model", b =>
+            modelBuilder.Entity("CarRental.Models.CarRentalDb.Car", b =>
                 {
-                    b.HasOne("CarRental.Models.CarRentalDb.Car", "car")
-                        .WithMany("Models")
-                        .HasForeignKey("carId");
+                    b.HasOne("CarRental.Models.CarRentalDb.Model", "model")
+                        .WithMany("Cars")
+                        .HasForeignKey("modelId");
 
-                    b.Navigation("car");
+                    b.Navigation("model");
                 });
 
             modelBuilder.Entity("CarRental.Models.CarRentalDb.Order", b =>
@@ -150,14 +150,14 @@ namespace CarRental.Migrations
                     b.Navigation("client");
                 });
 
-            modelBuilder.Entity("CarRental.Models.CarRentalDb.Car", b =>
-                {
-                    b.Navigation("Models");
-                });
-
             modelBuilder.Entity("CarRental.Models.CarRentalDb.Client", b =>
                 {
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("CarRental.Models.CarRentalDb.Model", b =>
+                {
+                    b.Navigation("Cars");
                 });
 #pragma warning restore 612, 618
         }

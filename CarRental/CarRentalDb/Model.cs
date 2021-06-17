@@ -7,9 +7,12 @@ namespace CarRental.Models.CarRentalDb
 {
     public class Model
     {
-        
 
-        public virtual Car car { get; set; }
+
+        public Model()
+        {
+            this.Cars = new HashSet<Car>();
+        }
 
         public int Id { get; set; }
         public string Brand { get; set; }
@@ -18,8 +21,8 @@ namespace CarRental.Models.CarRentalDb
 
         public int Horsepower { get; set; }
 
-        
 
+        public virtual IEnumerable<Car>? Cars{ get; set; }
 
 
 

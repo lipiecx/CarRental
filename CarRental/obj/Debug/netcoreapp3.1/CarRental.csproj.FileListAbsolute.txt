@@ -61,3 +61,8 @@ C:\Users\gacia\source\repos\CarRental\CarRental\obj\Debug\netcoreapp3.1\CarRenta
 C:\Users\gacia\source\repos\CarRental\CarRental\obj\Debug\netcoreapp3.1\CarRental.dll
 C:\Users\gacia\source\repos\CarRental\CarRental\obj\Debug\netcoreapp3.1\CarRental.pdb
 C:\Users\gacia\source\repos\CarRental\CarRental\obj\Debug\netcoreapp3.1\CarRental.genruntimeconfig.cache
+C:\Users\gacia\Source\Repos\CarRental\CarRental\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\gacia\Source\Repos\CarRental\CarRental\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\gacia\Source\Repos\CarRental\CarRental\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\gacia\Source\Repos\CarRental\CarRental\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\gacia\Source\Repos\CarRental\CarRental\obj\Debug\netcoreapp3.1\CarRental.MvcApplicationPartsAssemblyInfo.cs

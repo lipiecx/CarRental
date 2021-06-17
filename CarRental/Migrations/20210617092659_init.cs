@@ -8,20 +8,6 @@ namespace CarRental.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Cars",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Registration = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsAvailable = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Cars", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Clients",
                 columns: table => new
                 {
@@ -45,7 +31,6 @@ namespace CarRental.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    carId = table.Column<int>(type: "int", nullable: true),
                     Brand = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Capacity = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Horsepower = table.Column<int>(type: "int", nullable: false)
@@ -53,10 +38,25 @@ namespace CarRental.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Models", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Cars",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    modelId = table.Column<int>(type: "int", nullable: true),
+                    Registration = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsAvailable = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cars", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Models_Cars_carId",
-                        column: x => x.carId,
-                        principalTable: "Cars",
+                        name: "FK_Cars_Models_modelId",
+                        column: x => x.modelId,
+                        principalTable: "Models",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -91,9 +91,9 @@ namespace CarRental.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Models_carId",
-                table: "Models",
-                column: "carId");
+                name: "IX_Cars_modelId",
+                table: "Cars",
+                column: "modelId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_carId",
@@ -109,9 +109,6 @@ namespace CarRental.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Models");
-
-            migrationBuilder.DropTable(
                 name: "Orders");
 
             migrationBuilder.DropTable(
@@ -119,6 +116,9 @@ namespace CarRental.Migrations
 
             migrationBuilder.DropTable(
                 name: "Clients");
+
+            migrationBuilder.DropTable(
+                name: "Models");
         }
     }
 }

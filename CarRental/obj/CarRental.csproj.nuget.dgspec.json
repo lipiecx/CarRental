@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gacia\\source\\repos\\CarRental\\CarRental\\CarRental.csproj": {}
+    "C:\\Users\\gacia\\Source\\Repos\\CarRental\\CarRental\\CarRental.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gacia\\source\\repos\\CarRental\\CarRental\\CarRental.csproj": {
+    "C:\\Users\\gacia\\Source\\Repos\\CarRental\\CarRental\\CarRental.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gacia\\source\\repos\\CarRental\\CarRental\\CarRental.csproj",
+        "projectUniqueName": "C:\\Users\\gacia\\Source\\Repos\\CarRental\\CarRental\\CarRental.csproj",
         "projectName": "CarRental",
-        "projectPath": "C:\\Users\\gacia\\source\\repos\\CarRental\\CarRental\\CarRental.csproj",
+        "projectPath": "C:\\Users\\gacia\\Source\\Repos\\CarRental\\CarRental\\CarRental.csproj",
         "packagesPath": "C:\\Users\\gacia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gacia\\source\\repos\\CarRental\\CarRental\\obj\\",
+        "outputPath": "C:\\Users\\gacia\\Source\\Repos\\CarRental\\CarRental\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
@@ -64,6 +64,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.4, )"
             }
           },
           "imports": [
