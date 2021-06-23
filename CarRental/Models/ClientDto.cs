@@ -15,7 +15,7 @@ namespace CarRental.Models
 
         public string Pesel { get; set; }
 
-        public string Adress { get; set; }
+        public string Address { get; set; }
 
         public string Telephone { get; set; }
 

@@ -38,6 +38,7 @@ namespace CarRental.Repositories
 
             var order = Orders.Find(id);
             order.Id = dto.Id;
+            
             order.OrderDate = dto.OrderDate;
             order.ReturnDate = dto.ReturnDate;
             order.Price = dto.Price;

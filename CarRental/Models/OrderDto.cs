@@ -8,6 +8,10 @@ namespace CarRental.Models
     public class OrderDto
     {
         public int Id { get; set; }
+        
+        public int IdClient { get; set; }
+
+        public int IdCar { get; set; }
 
         public DateTime OrderDate { get; set; }
 

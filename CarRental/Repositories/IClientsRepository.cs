@@ -6,6 +6,7 @@ namespace CarRental.Repositories
 {
     public interface IClientsRepository
     {
+        List<ClientDto> get(int id);
         bool Add(Client clients);
         Client Edycja(int id, ClientDto dto);
         List<Client> GetAll();

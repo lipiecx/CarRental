@@ -25,6 +25,32 @@ namespace CarRental.Repositories
 
             return Clients.ToList();
         }
+         public List<ClientDto> get(int id)
+    {
+
+            List<ClientDto> list = new List<ClientDto>();
+            var client = _dbContext.Clients.Where(x => x.Id == id);
+
+            Parallel.ForEach(client, x =>
+
+             {
+                 ClientDto clientdto = new ClientDto();
+                 clientdto.Name = x.Name;
+                 clientdto.Surename = x.Surename;
+                 clientdto.Pesel = x.Pesel;
+                 clientdto.Address = x.Address;
+                 clientdto.Telephone = x.Telephone;
+                 clientdto.Wallet = x.Wallet;
+
+                 list.Add(clientdto);
+
+
+
+             });
+            return list;
+        }
+
+
 
         public bool Add(Client clients)
         {
@@ -42,7 +68,7 @@ namespace CarRental.Repositories
             client.Surename = dto.Surename;
             client.Pesel = dto.Pesel;
             client.Wallet = dto.Wallet;
-            client.Adress = dto.Adress;
+            client.Address = dto.Address;
             client.Telephone = dto.Telephone;
 
             _dbContext.Clients.Attach(client);

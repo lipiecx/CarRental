@@ -16,7 +16,7 @@ namespace CarRental.Migrations
                     Surename = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Pesel = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Telephone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Wallet = table.Column<double>(type: "float", nullable: false)
                 },

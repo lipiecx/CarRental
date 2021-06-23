@@ -30,6 +30,16 @@ namespace CarRental
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors(options => {
+                options.AddDefaultPolicy(
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://example.com",
+                                                          "http://www.contoso.com").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+
+                                  });
+            });
+
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
 
             services.AddTransient<IClientsRepository, ClientsRepository>();
@@ -62,7 +72,9 @@ namespace CarRental
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

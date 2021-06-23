@@ -27,7 +27,14 @@ namespace CarRental.Controllers
             var clients = _clientRepository.GetAll();
             return Ok(clients);
         }
+        [HttpGet("{id}")]
        
+        public IActionResult Get(int id)
+        {
+            var client = _clientRepository.get(id);
+            return Ok(client);
+        }
+
         [HttpPost("Add")]
         public IActionResult Add([FromBody] Client client)
         {
@@ -36,7 +43,7 @@ namespace CarRental.Controllers
                 Surename = client.Surename,
                 Name = client.Name,
                 Pesel = client.Pesel,
-                Adress = client.Adress,
+                Address = client.Address,
                 Telephone = client.Telephone,
                 Wallet = client.Wallet,
 
