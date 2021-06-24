@@ -6,7 +6,7 @@ export interface Car {
   id:number;
   idModel:number;
   registration;
-  isAvaiable:boolean;
+  isAvailable:boolean;
   
   }
 

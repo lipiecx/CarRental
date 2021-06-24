@@ -21,7 +21,7 @@ Wallet:number;
 })
 export class ClientComponent implements OnInit {
    
-   client:Client;
+  
   clients:Client[]=[];
   constructor(private clientService:ClientService,private router: Router,private route:ActivatedRoute) { }
 
@@ -36,13 +36,7 @@ export class ClientComponent implements OnInit {
     setTimeout(()=>console.log(this.clients),2000);
     
     });
-
-    
-    
-    
-    
-    
-      
+ 
 }
 get()
 {

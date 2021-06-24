@@ -26,7 +26,6 @@ export class OrderComponent implements OnInit {
 
    
     this.get();
-    console.log(this.orders);
     this.orderService.changes().subscribe(res=>{
     console.log(res);
     this.get();
@@ -38,4 +37,5 @@ get()
 {
 this.orderService.getOrders().subscribe(res=>this.orders=res);
 }
+
 }
