@@ -14,6 +14,7 @@ namespace CarRental.Controllers
     [ApiController]
     public class ClientController : ControllerBase
     {
+        
         private readonly IClientsRepository _clientRepository;
 
         public ClientController(IClientsRepository clientRepository)
@@ -28,15 +29,15 @@ namespace CarRental.Controllers
             return Ok(clients);
         }
         [HttpGet("{id}")]
-       
+
         public IActionResult Get(int id)
         {
             var client = _clientRepository.get(id);
             return Ok(client);
         }
 
-        [HttpPost("Add")]
-        public IActionResult Add([FromBody] Client client)
+        [HttpPost]
+        public IActionResult Add([FromBody] ClientDto client)
         {
             var clientEntity = new Client
             {
@@ -46,6 +47,7 @@ namespace CarRental.Controllers
                 Address = client.Address,
                 Telephone = client.Telephone,
                 Wallet = client.Wallet,
+                Orders = new HashSet<Order>()
 
             };
 
@@ -62,5 +64,12 @@ namespace CarRental.Controllers
         {
             return _clientRepository.Edycja(id, dto);
         }
-    }  
-}
+
+        [HttpDelete("{id}")]
+        public bool Usuń(int id)
+        {
+            return _clientRepository.Delete(id);
+        }
+    }
+}  
+

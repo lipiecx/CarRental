@@ -9,6 +9,8 @@ namespace CarRental.Repositories
         List<ClientDto> get(int id);
         bool Add(Client clients);
         Client Edycja(int id, ClientDto dto);
+
+        bool Delete(int id);
         List<Client> GetAll();
     }
 }

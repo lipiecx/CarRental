@@ -1,0 +1,30 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit($event)">
+    <div>
+        <label for="surename">Surename</label>
+        <input id="surename" name="surename" formControlName="surename" >
+    </div>
+    <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" formControlName="name" >
+    </div>
+    <div>
+        <label for="pesel">Pesel</label>
+        <input id="pesel" name="pesel" formControlName="pesel"   >
+    </div>
+    <div>
+        <label for="address">Address</label>
+        <input id="address" name="address" formControlName="address" >
+    </div>
+    <div>
+        <label for="telephone">Telephone</label>
+        <input id="telephone" name="telephone" formControlName="telephone"  >
+    </div>
+    <div>
+        <label for="wallet">Wallet</label>
+        <input id="wallet" name="wallet" formControlName="wallet" type="number" >
+    </div>
+    <div>
+        <button type="reset">Reset</button>
+        <button type="submit" [disabled]="form.invalid">Zatwierdź</button>
+    </div>
+</form>

@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClientService } from '../client.service';
 
 
 export interface Client {
 id:number;
-Surename:string;
-Name:string;
-Pesel:string;
-Address:string;
-Tel:number;
-Wallet:number;
-
+surename:string;
+name:string;
+pesel:string;
+address:string;
+tel:string;
+wallet:number;
 }
 
 @Component({
@@ -21,27 +20,34 @@ Wallet:number;
 })
 export class ClientComponent implements OnInit {
    
-  
-  clients:Client[]=[];
+  @Input()client:Client;
+  @Output() outputEmitter = new EventEmitter();
   constructor(private clientService:ClientService,private router: Router,private route:ActivatedRoute) { }
 
   ngOnInit() {
+  
+if(this.client == null) {
+      const id = Number.parseInt(this.route.snapshot.paramMap.get('id'));
+      if(id >0) {
+        this.clientService.getClient(id).subscribe(res => this.client = res);
+      }
 
-   
-    this.get();
-    console.log(this.clients);
-    this.clientService.changes().subscribe(res=>{
-    console.log(res);
-    this.get();
-    setTimeout(()=>console.log(this.clients),2000);
-    
-    });
- 
-}
-get()
-{
-this.clientService.getClients().subscribe(res=>this.clients=res);
+   }
+  
+  }
+
+
+onUpdate(){
+
+  this.router.navigateByUrl('client/' +this.client.id + '/update');
 }
 
+
+onDelete() {
+  this.clientService.delete(this.client.id).subscribe(() => console.log('delete client'));
+}
 
   }
+
+
+  

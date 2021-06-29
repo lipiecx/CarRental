@@ -11,6 +11,7 @@ namespace CarRental.Repositories
     public class ClientsRepository : IClientsRepository
     {
 
+
         private readonly AppDbContext _dbContext;
         private DbSet<Client> Clients { get; set; }
 
@@ -25,40 +26,50 @@ namespace CarRental.Repositories
 
             return Clients.ToList();
         }
-         public List<ClientDto> get(int id)
-    {
+        public List<ClientDto> get(int id)
+        {
 
             List<ClientDto> list = new List<ClientDto>();
             var client = _dbContext.Clients.Where(x => x.Id == id);
 
             Parallel.ForEach(client, x =>
 
-             {
-                 ClientDto clientdto = new ClientDto();
-                 clientdto.Name = x.Name;
-                 clientdto.Surename = x.Surename;
-                 clientdto.Pesel = x.Pesel;
-                 clientdto.Address = x.Address;
-                 clientdto.Telephone = x.Telephone;
-                 clientdto.Wallet = x.Wallet;
+            {
+                ClientDto clientdto = new ClientDto();
+                clientdto.Name = x.Name;
+                clientdto.Surename = x.Surename;
+                clientdto.Pesel = x.Pesel;
+                clientdto.Address = x.Address;
+                clientdto.Telephone = x.Telephone;
+                clientdto.Wallet = x.Wallet;
 
-                 list.Add(clientdto);
+                list.Add(clientdto);
 
 
 
-             });
+            });
             return list;
         }
 
 
 
-        public bool Add(Client clients)
+        public bool Add(Client client)
         {
-            Clients.Add(clients);
+            Clients.Add(client);
 
             return _dbContext.SaveChanges() > 0;
 
         }
+
+
+
+        public bool Delete(int id)
+        {
+            var client = Clients.Find(id);
+            Clients.Remove(client);
+            return _dbContext.SaveChanges() > 0;
+        }
+
 
         public Client Edycja(int id, ClientDto dto)
         {

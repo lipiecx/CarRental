@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CarRental"
+    "\\CarRental",
+    "\\CarRental\\Migrations"
   ],
+  "SelectedNode": "\\CarRental.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CarComponent } from './car/car.component';
 import { ModelComponent } from './model/model.component';
+import { FormComponent } from './form/form.component';
+import { ClientsComponent } from './clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ModelComponent } from './model/model.component';
     OrderComponent,
     MenuComponent,
     CarComponent,
-    ModelComponent
+    ModelComponent,
+    FormComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
