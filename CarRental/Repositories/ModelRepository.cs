@@ -23,11 +23,11 @@ namespace CarRental.Repositories
 
             return Models.ToList();
         }
-        public bool AddModel(Model models)
+        public Model AddModel(Model modeldto)
         {
-            Models.Add(models);
+            Models.Add(modeldto);
 
-            return _dbContext.SaveChanges() > 0;
+            return modeldto;
 
         }
         public Model Edit(int id, ModelDto dto)
@@ -42,6 +42,11 @@ namespace CarRental.Repositories
             _dbContext.SaveChanges();
             return model;
 
+        }
+
+        public Model GetModel(int id)
+        {
+            return _dbContext.Models.Find(id);
         }
     }
 }

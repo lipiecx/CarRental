@@ -22,7 +22,7 @@ namespace CarRental.Controllers
         }
 
         [HttpPost("Add")]
-        public IActionResult Add([FromBody] Model models)
+        public IActionResult Add([FromBody] ModelDto models)
         {
             var modelEntity = new Model
             {
@@ -31,11 +31,9 @@ namespace CarRental.Controllers
                 Horsepower = models.Horsepower
             };
             var result = _modelRepository.AddModel(modelEntity);
-            if (result)
-            {
-                return Ok(models);
-            }
-            return NotFound();
+            
+            return Ok(models);
+            
         }
         [HttpGet("getAll")]
         public IActionResult Get()

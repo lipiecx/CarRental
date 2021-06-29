@@ -66,3 +66,4 @@ C:\Users\gacia\Source\Repos\CarRental\CarRental\bin\Debug\netcoreapp3.1\Swashbuc
 C:\Users\gacia\Source\Repos\CarRental\CarRental\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\gacia\Source\Repos\CarRental\CarRental\obj\Debug\netcoreapp3.1\CarRental.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\gacia\source\repos\CarRental\CarRental\obj\Debug\netcoreapp3.1\CarRental.csproj.AssemblyReference.cache
+C:\Users\gacia\Source\Repos\CarRental\CarRental\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll

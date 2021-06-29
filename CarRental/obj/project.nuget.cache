@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MRIoNohvt9dxAF2pIIInECaFsD7YMGihfFgqEYY4ky/4JgF/dCYIvE7Fby2re51CtfbmFn0dDfFwrYWZTyF6Ww==",
+  "dgSpecHash": "bSS4Op3eJ6XBdI8ZQLGQUzrisAewwVPDXSUoh5SFw+Lxnd0GTyqPJOGUwU3qsA4H1qLLt9oV6WthjA6myhIUKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\gacia\\Source\\Repos\\CarRental\\CarRental\\CarRental.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\gacia\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.7\\microsoft.entityframeworkcore.abstractions.5.0.7.nupkg.sha512",
     "C:\\Users\\gacia\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.7\\microsoft.entityframeworkcore.analyzers.5.0.7.nupkg.sha512",
     "C:\\Users\\gacia\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.7\\microsoft.entityframeworkcore.design.5.0.7.nupkg.sha512",
+    "C:\\Users\\gacia\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\5.0.7\\microsoft.entityframeworkcore.inmemory.5.0.7.nupkg.sha512",
     "C:\\Users\\gacia\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.7\\microsoft.entityframeworkcore.relational.5.0.7.nupkg.sha512",
     "C:\\Users\\gacia\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.7\\microsoft.entityframeworkcore.sqlserver.5.0.7.nupkg.sha512",
     "C:\\Users\\gacia\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.7\\microsoft.entityframeworkcore.tools.5.0.7.nupkg.sha512",

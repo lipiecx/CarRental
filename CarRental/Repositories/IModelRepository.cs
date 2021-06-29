@@ -6,8 +6,9 @@ namespace CarRental.Repositories
 {
     public interface IModelRepository
     {
-        bool AddModel(Model models);
+        Model AddModel(Model modeldto);
         Model Edit(int id, ModelDto dto);
         List<Model> GetAll();
+        public Model GetModel(int id);
     }
 }
